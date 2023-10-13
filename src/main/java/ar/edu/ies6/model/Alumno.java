@@ -8,7 +8,7 @@ public class Alumno {
 	private String name;
 	private String lastName;
 	private Date fechaNac;
-	private Integer age;
+	private Integer edad;
 	private String adressStreet;
 	private String adressBarrio;
 	private Integer adressNumber;
@@ -110,11 +110,11 @@ public class Alumno {
 		this.estado = estado;
 	}
 		
-	public Integer getAge() {
-		return age;
+	public Integer getEdad() {
+		return edad;
 	}
-	
-	public Integer setAge(Integer age) {
-		return age;
+
+	public Integer setEdad(Integer edad) {
+		return edad;
 	}
 }
