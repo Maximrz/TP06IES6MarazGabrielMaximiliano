@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Alumnos</title>
+</head>
+<body>
+	<div>
+		<h2>Carga de ALUMNOS</h2>
+		<div>
+			<form th:object="${alumno}" th:action="@{/cargarAlumno}" method="post">
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" th:field="*{name}"><br>
+				<label for="apellido">Apellido:</label>
+				<input type="text" id="apellido" th:field="*{lastName}"><br>
+				<label for="fechaNac">Fecha de Nacimiento:</label>
+				<input type="date" id="fechaNac" th:field="*{fechaNac}"><br>
+				<label for="edad">Edad:</label>
+				<input type="text" id="edad" th:field="*{age}"><br>
+				<label for="dirCalle">Calle:</label>
+				<input type="text" id="dirCalle" th:field="*{adressStreet}"><br>
+				<label for="dirBarrio">Barrio:</label>
+				<input type="text" id="dirBarrio" th:field="*{adressBarrio}"><br>
+				<label for="dirNum">Número:</label>
+				<input type="number" id="dirNum" th:field="*{adressNumber}"><br>
+				<label for="localidad">Ciudad:</label>
+				<input type="text" id="localidad" th:field="*{adressCity}"><br>
+				<label for="codPost">Código Postal:</label>
+				<input type="number" id="codPost" th:field="*{postCode}"><br>
+				<label for="correo">Email:</label>
+				<input type="email" id="correo" th:field="*{adressEmail}"><br>
+				<label for="telefono">Teléfono:</label>
+				<input type="" id="telefono" th:field="*{phoneNumber}"><br>
+				
+				<input type="submit" value="Cargar Alumno">
+			</form>
+		</div>			
+	</div>
+</body>
+</html>
