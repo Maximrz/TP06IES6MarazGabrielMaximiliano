@@ -3,34 +3,49 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Alumnos</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div>
+	<div class="container">
 		<h2>Carga de ALUMNOS</h2>
 		<div>
 			<form th:object="${alumno}" th:action="@{/cargarAlumno}" method="post">
-				<label for="nombre">Nombre:</label>
-				<input type="text" id="nombre" th:field="*{name}"><br>
-				<label for="apellido">Apellido:</label>
-				<input type="text" id="apellido" th:field="*{lastName}"><br>
-				<label for="fechaNac">Fecha de Nacimiento:</label>
-				<input type="date" id="fechaNac" th:field="*{fechaNac}"><br>
-				<label for="edad">Edad:</label>
-				<input type="number" id="edad" th:field="*{edad}"><br>
-				<label for="dirCalle">Calle:</label>
-				<input type="text" id="dirCalle" th:field="*{adressStreet}"><br>
-				<label for="dirBarrio">Barrio:</label>
-				<input type="text" id="dirBarrio" th:field="*{adressBarrio}"><br>
-				<label for="dirNum">Número:</label>
-				<input type="number" id="dirNum" th:field="*{adressNumber}"><br>
-				<label for="localidad">Ciudad:</label>
-				<input type="text" id="localidad" th:field="*{adressCity}"><br>
-				<label for="codPost">Código Postal:</label>
-				<input type="number" id="codPost" th:field="*{postCode}"><br>
-				<label for="correo">Email:</label>
-				<input type="email" id="correo" th:field="*{adressEmail}"><br>
-				<label for="telefono">Teléfono:</label>
-				<input type="" id="telefono" th:field="*{phoneNumber}"><br>
+				<label class="form-label" for="nombre">Nombre:</label>
+				<input class="form-control" type="text" id="nombre" th:field="*{name}"><br>
+				
+				<label class="form-label" for="apellido">Apellido:</label>
+				<input class="form-control" type="text" id="apellido" th:field="*{lastName}"><br>
+				
+				<label class="form-label" for="fechaNac">Fecha de Nacimiento:</label>
+				<input class="form-control" type="date" id="fechaNac" th:field="*{fechaNac}"><br>
+				
+				<label class="form-label" for="dni">DNI:</label>
+				<input class="form-control" type="number" id="dni" th:field="*{dni}"><br>
+				
+				<label class="form-label" for="dirCalle">Calle:</label>
+				<input class="form-control" type="text" id="dirCalle" th:field="*{adressStreet}"><br>
+				
+				<label class="form-label" for="dirBarrio">Barrio:</label>
+				<input class="form-control" type="text" id="dirBarrio" th:field="*{adressBarrio}"><br>
+				
+				<label class="form-label" for="dirNum">Número:</label>
+				<input class="form-control" type="number" id="dirNum" th:field="*{adressNumber}"><br>
+				
+				<label class="form-label" for="localidad">Ciudad:</label>
+				<input class="form-control" type="text" id="localidad" th:field="*{adressCity}"><br>
+				
+				<label class="form-label" for="departamento">Departamento:</label>
+				<input class="form-control" type="text" id="departamento" th:field="*{departamento}"><br>
+				
+				<label class="form-label" for="codPost">Código Postal:</label>
+				<input class="form-control" type="number" id="codPost" th:field="*{postCode}"><br>
+				
+				<label class="form-label" for="correo">Email:</label>
+				<input class="form-control" type="email" id="correo" th:field="*{adressEmail}"><br>
+				
+				<label class="form-label" for="telefono">Teléfono:</label>
+				<input class="form-control" type="number" id="telefono" th:field="*{phoneNumber}"><br>
 				
 				<input type="submit" value="Cargar Alumno">
 			</form>

@@ -10,14 +10,16 @@ public class Alumno {
 	private String name;
 	private String lastName;
 	private LocalDate fechaNac;
+	private Integer dni;
 	//private Integer edad;
 	private String adressStreet;
 	private String adressBarrio;
 	private Integer adressNumber;
 	private String adressCity;
+	private String departamento;
 	private Integer postCode;
 	private String adressEmail;
-	private Integer phoneNumber;
+	private String phoneNumber;
 	private Boolean estado;
 	
 	public Alumno() {
@@ -60,7 +62,7 @@ public class Alumno {
 		return adressBarrio;
 	}
 
-	public void setBarrio(String adressBarrio) {
+	public void setAdressBarrio(String adressBarrio) {
 		this.adressBarrio = adressBarrio;
 	}
 
@@ -96,11 +98,11 @@ public class Alumno {
 		this.adressEmail = adressEmail;
 	}
 
-	public Integer getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -122,5 +124,21 @@ public class Alumno {
 
 	public Integer setEdad(Integer edad) {
 		return edad;
+	}
+
+	public String getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(String departamento) {
+		this.departamento = departamento;
+	}
+
+	public Integer getDni() {
+		return dni;
+	}
+
+	public void setDni(Integer dni) {
+		this.dni = dni;
 	}
 }
