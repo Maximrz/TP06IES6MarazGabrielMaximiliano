@@ -21,43 +21,43 @@
 
 <body>	
 	<div class="container">
-			<h2><p style="text-align:center">CARGA DE ALUMNOS</p></h2>
+			<h2><p style="text-align:center"><b><font face="times new roman"> CARGA DE ALUMNOS</font></b></p></h2>
 		<div>
 			<form th:object="${alumno}" th:action="@{/cargarAlumno}" method="post">
-				<label class="form-label" for="nombre">Nombre:</label>
+				<label class="form-label" for="nombre"><b>Nombre:</b></label>
 				<input class="form-control" type="text" id="nombre" th:field="*{name}"><br>
 				
-				<label class="form-label" for="apellido">Apellido:</label>
+				<label class="form-label" for="apellido"><b>Apellido:</b></label>
 				<input class="form-control" type="text" id="apellido" th:field="*{lastName}"><br>
 				
-				<label class="form-label" for="fechaNac">Fecha de Nacimiento:</label>
+				<label class="form-label" for="fechaNac"><b>Fecha de Nacimiento:</b></label>
 				<input class="form-control" type="date" id="fechaNac" th:field="*{fechaNac}"><br>
 				
-				<label class="form-label" for="dni">DNI:</label>
+				<label class="form-label" for="dni"><b>DNI:</b></label>
 				<input class="form-control" type="number" id="dni" th:field="*{dni}"><br>
 				
-				<label class="form-label" for="dirCalle">Calle:</label>
+				<label class="form-label" for="dirCalle"><b>Calle:</b></label>
 				<input class="form-control" type="text" id="dirCalle" th:field="*{adressStreet}"><br>
 				
-				<label class="form-label" for="dirBarrio">Barrio:</label>
+				<label class="form-label" for="dirBarrio"><b>Barrio:</b></label>
 				<input class="form-control" type="text" id="dirBarrio" th:field="*{adressBarrio}"><br>
 				
-				<label class="form-label" for="dirNum">Número:</label>
+				<label class="form-label" for="dirNum"><b>Número:</b></label>
 				<input class="form-control" type="number" id="dirNum" th:field="*{adressNumber}"><br>
 				
-				<label class="form-label" for="localidad">Ciudad:</label>
+				<label class="form-label" for="localidad"><b>Ciudad:</b></label>
 				<input class="form-control" type="text" id="localidad" th:field="*{adressCity}"><br>
 				
-				<label class="form-label" for="departamento">Departamento:</label>
+				<label class="form-label" for="departamento"><b>Departamento:</b></label>
 				<input class="form-control" type="text" id="departamento" th:field="*{departamento}"><br>
 				
-				<label class="form-label" for="codPost">Código Postal:</label>
+				<label class="form-label" for="codPost"><b>Código Postal:</b></label>
 				<input class="form-control" type="number" id="codPost" th:field="*{postCode}"><br>
 				
-				<label class="form-label" for="correo">Email:</label>
+				<label class="form-label" for="correo"><b>Email:</b></label>
 				<input class="form-control" type="email" id="correo" th:field="*{adressEmail}"><br>
 				
-				<label class="form-label" for="telefono">Teléfono:</label>
+				<label class="form-label" for="telefono"><b>Teléfono:</b></label>
 				<input class="form-control" type="number" id="telefono" th:field="*{phoneNumber}"><br>
 				
 				<input type="submit" value="Cargar Alumno">
