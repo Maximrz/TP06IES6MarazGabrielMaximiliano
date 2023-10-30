@@ -10,7 +10,7 @@
       width: 100%;
     }
     body {
-      background: url(https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm0yMjItbWluZC0xNl8xLmpwZw.jpg); 
+      background: url(https://i.imgur.com/4FwBpde.jpg); 
       background-size: cover;
       background-repeat: no-repeat;
       margin: 0;
@@ -20,7 +20,7 @@
 </head>
 <body>
 	<div class="container">
-		<table class="table table-striped">
+		<table class="table table-bordered border-primary">
   			<tr>
 				  <th><p style="text-align:center">Nombre</p></th>
 				  <th><p style="text-align:center">Apellido</p></th>
@@ -35,6 +35,8 @@
 				  <th><p style="text-align:center">Código Postal</p></th>
 				  <th><p style="text-align:center">Correo Electrónico</p></th>
 				  <th><p style="text-align:center">Teléfono</p></th> 	  
+				  <th><p style="text-align:center">Edición</p></th> 	  
+
 			</tr>
 			
   			<tr th:each="alumno:${listado}">
@@ -50,14 +52,19 @@
 				  <td th:text="${alumno.departamento}"></td>
 				  <td th:text="${alumno.postCode}"></td>
 				  <td th:text="${alumno.adressEmail}"></td>
-				  <td th:text="${alumno.phoneNumber}"></td>			  				  
+				  <td th:text="${alumno.phoneNumber}"></td>
+				  <td><a type="button" class="btn btn-warning"
+				  href="#"
+				  th:href="@{'/eliminarAlumno/'+${alumno.dni}}"
+				>ELIMINAR</a></td>		  				  
   			</tr>
 		</table>
-		<form>
-			<input type="button" onclick="history.back()" name="Volver Atrás" value="Volver Atrás">
-			<input type="button" value="Recargar página" onClick="location.reload();"/>
-			
-		</form>
+	<form>
+	</form>
+	<input type="button" value="Recargar página" onClick="location.reload();"/>	
+	<a href="http://localhost:8080/">
+        <button>Volver a la página principal</button>
+    </a>
 	</div>
 </body>
 </html>
