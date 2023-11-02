@@ -1,25 +1,47 @@
 package ar.edu.ies6.model;
 
 import java.time.LocalDate;
+
 import java.time.Period;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
+@Entity
 @Component
 public class Alumno {
+	@Column
+	//@NotBlank @Size(min = 1, max = 30)
 	private String name;
+	@Column
 	private String lastName;
+	@Column
 	private LocalDate fechaNac;
+	@Id
+	//@GeneratedValue (strategy = GenerationType.AUTO)
 	private Integer dni;
 	//private Integer edad;
+	@Column
 	private String adressStreet;
+	@Column
 	private String adressBarrio;
+	@Column
 	private Integer adressNumber;
+	@Column
 	private String adressCity;
+	@Column
 	private String departamento;
+	@Column
 	private Integer postCode;
+	@Column
 	private String adressEmail;
+	@Column
 	private String phoneNumber;
+	@Column
 	private Boolean estado;
 	
 	public Alumno() {
