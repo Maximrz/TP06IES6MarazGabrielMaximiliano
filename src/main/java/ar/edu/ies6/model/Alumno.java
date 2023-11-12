@@ -6,6 +6,8 @@ import java.time.Period;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -34,7 +36,7 @@ public class Alumno {
 	@Column
 	private String adressCity;
 	@Column
-	private String departamento;
+	private String localidad;
 	@Column
 	private Integer postCode;
 	@Column
@@ -148,12 +150,12 @@ public class Alumno {
 		return edad;
 	}
 
-	public String getDepartamento() {
-		return departamento;
+	public String getLocalidad() {
+		return localidad;
 	}
 
-	public void setDepartamento(String departamento) {
-		this.departamento = departamento;
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
 	}
 
 	public Integer getDni() {
