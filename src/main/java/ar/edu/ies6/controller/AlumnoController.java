@@ -27,12 +27,8 @@ public class AlumnoController {
 	@GetMapping({ "/index", "/", "/home", "/alumno" })
 	public ModelAndView cargarAlumno() {
 		
-		//Alumno alu = new Alumno();
-		alu.setFechaNac(LocalDate.of(1988, 8, 20));
-		System.out.println("Edad: "+alu.getEdad());
-
 		//Mandar el objeto a la vista
-		ModelAndView modelView = new ModelAndView("index");
+		ModelAndView modelView = new ModelAndView("alumno");
 		
 		modelView.addObject("alumno", alu);
 		
@@ -44,7 +40,6 @@ public class AlumnoController {
 	@PostMapping("/cargarAlumno")
     public ModelAndView cargarAlumno(@ModelAttribute("alumno") Alumno alumno) {
  	
-		//ListadoAlumnos.getListado().add(alumno);
 		
         //Ahora se guarda en el BD
 		alumnoService.guardarAlumno(alumno);

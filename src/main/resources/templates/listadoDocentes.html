@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Listado Alumnos</title>
+	<title>Listado Docentes</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 	<style>
@@ -27,39 +27,31 @@
 				  <th><p style="text-align:center">Fecha De Nacimiento</p></th>
 				  <th><p style="text-align:center">Edad</p></th>
 				  <th><p style="text-align:center">DNI</p></th>
-				  <th><p style="text-align:center">Calle</p></th>
-				  <th><p style="text-align:center">Barrio</p></th>
-				  <th><p style="text-align:center">N°</p></th>
+				  <th><p style="text-align:center">Género</p></th>
 				  <th><p style="text-align:center">Ciudad</p></th>
-				  <th><p style="text-align:center">Localidad</p></th>
-				  <th><p style="text-align:center">Código Postal</p></th>
 				  <th><p style="text-align:center">Correo Electrónico</p></th>
 				  <th><p style="text-align:center">Teléfono</p></th> 	  
 				  <th><p style="text-align:center">Edición</p></th> 	  
 
 			</tr>
 			
-  			<tr th:each="alumno:${listado}">
-				  <td th:text="${alumno.name}"></td>
-				  <td th:text="${alumno.lastName}"></td>
-				  <td th:text="${#temporals.format(alumno.fechaNac, 'dd/MM/yyyy')}"></td>
-				  <td th:text="${alumno.getEdad()}"></td>
-				  <td th:text="${alumno.dni}"></td>
-				  <td th:text="${alumno.adressStreet}"></td>
-				  <td th:text="${alumno.adressBarrio}"></td>
-				  <td th:text="${alumno.adressNumber}"></td>
-				  <td th:text="${alumno.adressCity}"></td>
-				  <td th:text="${alumno.localidad}"></td>
-				  <td th:text="${alumno.postCode}"></td>
-				  <td th:text="${alumno.adressEmail}"></td>
-				  <td th:text="${alumno.phoneNumber}"></td>
+  			<tr th:each="docente:${listado}">
+				  <td th:text="${docente.name}"></td>
+				  <td th:text="${docente.lastName}"></td>
+				  <td th:text="${#temporals.format(docente.fechaNac, 'dd/MM/yyyy')}"></td>
+				  <td th:text="${docente.getEdad()}"></td>
+				  <td th:text="${docente.dni}"></td>
+				  <td th:text="${docente.gender}"></td>
+				  <td th:text="${docente.adressCity}"></td>				  
+				  <td th:text="${docente.adressEmail}"></td>
+				  <td th:text="${docente.phoneNumber}"></td>
 				  <td><a type="button" class="btn btn-warning"
 				  href="#"
-				  th:href="@{'/eliminarAlumno/'+${alumno.dni}}"
+				  th:href="@{'/eliminarDocente/'+${docente.dni}}"
 				  >ELIMINAR</a>
 				  <a type="button" class="btn btn-warning"
 				  href="#"				  
-				  th:href="@{'/modificarAlumno/'+${alumno.dni}}"
+				  th:href="@{'/modificarDocente/'+${docente.dni}}"
 				  >MODIFICAR</a></td>
   			</tr>
 		</table>
