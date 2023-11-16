@@ -1,9 +1,8 @@
 package ar.edu.ies6.controller;
 
-import java.time.LocalDate;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,22 +21,22 @@ public class AlumnoController {
 	@Autowired
 	AlumnoService alumnoService;
 
-	@GetMapping({ "/index", "/", "/home", "/alumno" })
+	@GetMapping("/")
+    public String index(Model model) {
+        return "index";
+    }
+
+	//procesar los datos del formulario
+	@GetMapping({"/alumno"})
 	public ModelAndView cargarAlumno() {
 		
-		//Alumno alu = new Alumno();
-		alu.setFechaNac(LocalDate.of(1988, 8, 20));
-		System.out.println("Edad: "+alu.getEdad());
-
 		//Mandar el objeto a la vista
-		ModelAndView modelView = new ModelAndView("index");
+		ModelAndView modelView = new ModelAndView("alumno");
 		
 		modelView.addObject("alumno", alu);
 		
 		return modelView;
 	}
-
-	//procesar los datos del formulario
 	
 	@PostMapping("/cargarAlumno")
     public ModelAndView cargarAlumno(@ModelAttribute("alumno") Alumno alumno) {
