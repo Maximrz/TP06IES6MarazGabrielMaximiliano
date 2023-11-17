@@ -2,7 +2,6 @@ package ar.edu.ies6.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,34 +9,37 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import ar.edu.ies6.model.Alumno;
 import ar.edu.ies6.service.AlumnoService;
+import ch.qos.logback.core.model.Model;
 
 
 @Controller
 public class AlumnoController {
 	
-	@Autowired                                           
+	@Autowired
 	Alumno alu;
 	
 	@Autowired
 	AlumnoService alumnoService;
+	
+	@GetMapping({"/index"})
+	public String index(Model model) {
+		return "index";
+	}
 
-	@GetMapping("/")
-    public String index(Model model) {
-        return "index";
-    }
-
-	//procesar los datos del formulario
 	@GetMapping({"/alumno"})
 	public ModelAndView cargarAlumno() {
 		
-		//Mandar el objeto a la vista
-		ModelAndView modelView = new ModelAndView("alumno");
+		//alu.setFechaNac(LocalDate.of(1988, 8, 20));
+		//System.out.println("Edad: "+alu.obtenerEdad());
 		
+		ModelAndView modelView = new ModelAndView ("alumno");
 		modelView.addObject("alumno", alu);
 		
-		return modelView;
+		return modelView;	
 	}
 	
+	//procesar los datos del formulario
+
 	@PostMapping("/cargarAlumno")
     public ModelAndView cargarAlumno(@ModelAttribute("alumno") Alumno alumno) {
  	

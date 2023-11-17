@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Alumnos</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	<style>
+	img{
+      width: 50%;
+    }
+    body {
+      background: url(https://i.imgur.com/4FwBpde.jpg); 
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      height: 100%
+    }
+  </style>
+</head>
+
+<body>	
+	<div class="container">
+			<h2><p style="text-align:center"><b><font face="times new roman">CARGA DE ALUMNOS</font></b></p></h2>
+		<div>
+			<form th:object="${alumno}" th:action="@{/cargarAlumno}" method="post">
+				
+				<label class="form-label" for="nombre"><font color="white"><b>Nombre:</b></font></label>
+				<input class="form-control" type="text" id="nombre" th:field="*{name}" required><br>
+				
+				<label class="form-label" for="apellido"><font color="white"><b>Apellido:</b></font></label>
+				<input class="form-control" type="text" id="apellido" th:field="*{lastName}" required><br>
+				
+				<label class="form-label" for="fechaNac"><font color="white"><b>Fecha de Nacimiento:</b></font></label>
+				<input class="form-control" type="date" id="fechaNac" th:field="*{fechaNac}" required><br>
+				
+				<label class="form-label" for="dni"><font color="white"><b>DNI:</b></font></label>
+				<input class="form-control" type="number" id="dni" th:field="*{dni}" required><br>
+				
+				<label class="form-label" for="dirCalle"><font color="white"><b>Calle:</b></font></label>
+				<input class="form-control" type="text" id="dirCalle" th:field="*{adressStreet}" required><br>
+				
+				<label class="form-label" for="dirBarrio"><font color="white"><b>Barrio:</b></font></label>
+				<input class="form-control" type="text" id="dirBarrio" th:field="*{adressBarrio}" required><br>
+				
+				<label class="form-label" for="dirNum"><font color="white"><b>Número:</b></font></label>
+				<input class="form-control" type="number" id="dirNum" th:field="*{adressNumber}" required><br>
+				
+				<label class="form-label" for="city"><font color="white"><b>Ciudad:</b></font></label>
+				<input class="form-control" type="text" id="city" th:field="*{adressCity}" required><br>
+				
+				<label class="form-label" for="localidad"><font color="white"><b>Localidad:</b></font></label>
+				<input class="form-control" type="text" id="localidad" th:field="*{localidad}" required><br>
+				
+				<label class="form-label" for="codPost"><font color="white"><b>Código Postal:</b></font></label>
+				<input class="form-control" type="number" id="codPost" th:field="*{postCode}" required><br>
+				
+				<label class="form-label" for="correo"><font color="white"><b>Email:</b></font></label>
+				<input class="form-control" type="email" id="correo" th:field="*{adressEmail}" required><br>
+				
+				<label class="form-label" for="telefono"><font color="white"><b>Teléfono:</b></font></label>
+				<input class="form-control" type="number" id="telefono" th:field="*{phoneNumber}" required><br>
+				
+				<input type="submit" value="Cargar Alumno">
+				<a href="http://localhost:8080/">
+					<button>Volver a la página principal</button>
+					</a>
+				
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
