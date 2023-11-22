@@ -10,7 +10,7 @@
       width: 50%;
     }
     body {
-      background: url(https://i.imgur.com/4FwBpde.jpg); 
+      background: url(https://i.imgur.com/1z419Wk.jpg); 
       background-size: cover;
       background-repeat: no-repeat;
       margin: 0;
@@ -22,7 +22,7 @@
 <body>	
 	<div class="container">
 		
-			<h2><p style="text-align:center"><b><font face="times new roman">CARGA DE DOCENTES</font></b></p></h2>
+			<h2><p style="text-align:center"><b><font face="raro, courier"><font color="white">CARGA DE DOCENTES</font></font></b></p></h2>
 		<div>
 			<form th:object="${docente}" th:action="@{/cargarDocente}" method="post">
 				
@@ -54,12 +54,13 @@
 				<label class="form-label" for="telefono"><font color="white"><b>Teléfono:</b></font></label>
 				<input class="form-control" type="number" id="telefono" th:field="*{phoneNumber}" required><br>
 				
-				<input type="submit" value="Cargar Docente">
-				<a href="http://localhost:8080/">
-					<button>Volver a la página principal</button>
-					</a>
+				<input type="submit" class="btn btn-success" value="Cargar Docente">
 								
 			</form>
+			<br>
+			<a href="http://localhost:8080/">
+				<button type="button" class="btn btn-info">Volver al Menú</button>
+				</a>
 		</div>
 	</div>
 
