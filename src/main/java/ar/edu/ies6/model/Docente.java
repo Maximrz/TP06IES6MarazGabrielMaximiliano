@@ -24,7 +24,7 @@ public class Docente {
 		@Column
 		private LocalDate fechaNac;
 		@Id
-		@Column
+		@Column(unique = true)
 		private Integer dni;
 		@Column
 		private String gender;
@@ -125,5 +125,20 @@ public class Docente {
 		public void setGender(String gender) {
 			this.gender = gender;
 		}
+
+		public void modificarDni(Integer nuevoDni) {
+	       
+	        if (validarDni(nuevoDni)) {
+	            this.dni = nuevoDni;
+	            System.out.println("DNI modificado correctamente.");
+	        } else {
+	            System.out.println("Error: El nuevo DNI no es válido.");
+	        }
+	    }
+
+	    // Método para validar el DNI
+	    private boolean validarDni(Integer dni) {
+	        return dni.toString().length() == 8;
+	    }
 
 }
