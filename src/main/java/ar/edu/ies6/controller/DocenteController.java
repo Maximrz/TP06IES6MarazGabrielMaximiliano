@@ -77,12 +77,9 @@ public class DocenteController {
 	
 	@PostMapping("/modificarDocente")
     public ModelAndView modificarUnDocente(@ModelAttribute("docente") Docente docente) {
- 	
 		docenteService.guardarDocente(docente);
 		ModelAndView modelView = new ModelAndView ("listadoDocentes");
-		
 		modelView.addObject("listadoDocente", docenteService.buscarTodosDocente());
-		
 		return modelView;
 	}
 

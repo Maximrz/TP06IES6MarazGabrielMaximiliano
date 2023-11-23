@@ -21,6 +21,7 @@ public class Alumno {
 	private LocalDate fechaNac;
 	@Id
 	//@GeneratedValue (strategy = GenerationType.AUTO)
+	@Column
 	private Integer dni;
 	//private Integer edad;
 	@Column

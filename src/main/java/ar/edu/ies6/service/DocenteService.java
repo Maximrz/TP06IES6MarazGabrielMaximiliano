@@ -33,14 +33,14 @@ public class DocenteService {
 		}
 
 		public List<Docente> buscarTodosDocente() {
-		//algoritmo para buscar alumnos
+		//algoritmo para buscar docentes
 				
 		return (List<Docente>) docenteRepository.findByEstado(true);
 		
 		}
 		
 		//metodo para modificar
-		public void modificarAlumno(Docente docente) {
+		public void modificarDocente(Docente docente) {
 			
 		}
 		

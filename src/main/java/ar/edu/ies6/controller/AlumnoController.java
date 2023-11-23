@@ -82,7 +82,7 @@ public class AlumnoController {
 	
 	@GetMapping("/modificarAlumno/{dni}")
 	public ModelAndView modificarAlumno(@PathVariable Integer dni) throws Exception {
-		ModelAndView modificarAlumno = new ModelAndView("index");
+		ModelAndView modificarAlumno = new ModelAndView("alumno");
 		modificarAlumno.addObject("alumno", alumnoService.encontrarUnAlumno(dni));
 		return modificarAlumno;	
 	}
