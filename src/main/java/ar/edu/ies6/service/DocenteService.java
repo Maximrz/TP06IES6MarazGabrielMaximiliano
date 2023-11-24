@@ -13,6 +13,7 @@ public class DocenteService {
 	
 	@Autowired
 	DocenteRepository docenteRepository;
+	private Integer dni;
 		
 	public void guardarDocente(Docente docente) {
 		//metodo para guardar
@@ -42,10 +43,25 @@ public class DocenteService {
 		//metodo para modificar
 		public void modificarDocente(Docente docente) {
 			
+			
 		}
 		
 		public Docente encontrarUnDocente(Integer dni) throws Exception {
 			return docenteRepository.findById(dni).orElseThrow(() -> new Exception("Docente no encontrado"));
 		}
+		
+		public void modificarDni(Integer nuevoDni) {
+		       
+	        if (validarDni(nuevoDni)) {
+	            this.dni = nuevoDni;
+	            System.out.println("DNI modificado correctamente.");
+	        } else {
+	            System.out.println("Error: El nuevo DNI no es válido.");
+	        }
+	    }
+	    // Método para validar el DNI
+	    private boolean validarDni(Integer dni) {
+	        return dni.toString().length() == 8;
+	    }
 
 }

@@ -81,11 +81,9 @@ public class DocenteController {
             docente.modificarDni(docente.getDni());
         }
 
-		docenteService.guardarDocente(docente);
-		
+		docenteService.guardarDocente(docente);	
 		ModelAndView modelView = new ModelAndView("listadoDocentes");
 	    modelView.addObject("listadoDocente", docenteService.buscarTodosDocente());
-
         return modelView;
     }
 

@@ -126,19 +126,8 @@ public class Docente {
 			this.gender = gender;
 		}
 
-		public void modificarDni(Integer nuevoDni) {
-	       
-	        if (validarDni(nuevoDni)) {
-	            this.dni = nuevoDni;
-	            System.out.println("DNI modificado correctamente.");
-	        } else {
-	            System.out.println("Error: El nuevo DNI no es válido.");
-	        }
-	    }
-
-	    // Método para validar el DNI
-	    private boolean validarDni(Integer dni) {
-	        return dni.toString().length() == 8;
-	    }
-
+		public void modificarDni(Integer dni2) {
+			// TODO Auto-generated method stub
+			
+		}
 }
